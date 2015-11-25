@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int num;
+	char *s, *s1;
+	cin >> num;
+	s1 = "";
+	s = "";
+	while (true)
+	{
+		if ((num >= 10) && (num < 20))
+		{
+			switch (num)
+			{
+			case 10: s = ("ten"); break;
+			case 11: s = ("eleven"); break;
+			case 12: s = ("twelve"); break;
+			case 13: s = ("thirteen"); break;
+			case 14: s = ("fourteen"); break;
+			case 15: s = ("fifteen"); break;
+			case 16: s = ("sixteen"); break;
+			case 17: s = ("seventeen"); break;
+			case 18: s = ("eighteen"); break;
+			case 19: s = ("nineteen"); break;
+			}
+		}
+		else
+		{
+			switch (num / 10)
+			{
+			case 2: s = ("twenty"); break;
+			case 3: s = ("thirty"); break;
+			case 4: s = ("forty"); break;
+			case 5: s = ("fifty"); break;
+			case 6: s = ("sixty"); break;
+			case 7: s = ("seventy"); break;
+			case 8: s = ("eighty"); break;
+			case 9: s = ("ninety"); break;
+
+			};
+			switch (num % 10)
+			{
+			case 1: s1 = ("one"); break;
+			case 2: s1 = ("two"); break;
+			case 3: s1 = ("three"); break;
+			case 4: s1 = ("four"); break;
+			case 5: s1 = ("five"); break;
+			case 6: s1 = ("six"); break;
+			case 7: s1 = ("seven"); break;
+			case 8: s1 = ("eight"); break;
+			case 9: s1 = ("nine"); break;
+			}
+		}
+		cout << s << " " << s1 << endl;
+		system("pause");
+
+		system("cls");
+		return 0;
+	}
+}
+
+
