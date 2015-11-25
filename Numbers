@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	double x, y;
+	cout << " Enter X  ";
+	cin >> x;
+	cout << " Enter  Y  ";
+	cin >> y;
+	if (y < 0, 5 && y < x)
+		cout << " don't belong ";
+	{
+		if (x < 1 || (x - 1)*(x - 1) + y * y <= 1)
+			cout << " belong ";
+		else
+			cout << " don't belong ";
+	}
+	system("pause");
+	return 0;
+}
