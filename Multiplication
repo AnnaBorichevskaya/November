@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a, b;
+	cout << "Enter a : ";
+	cin >> a;
+	b = a * 2;
+	cout << a << "*" << "2" << "=" << b;
+	system("pause");
+	return 0;
+}
