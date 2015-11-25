@@ -9,7 +9,7 @@ int main()
 	int n;
 	while (true)
 	{
-		cout << "Enter n (amount) : " << N << "   ";
+		cout << "Enter n (amount) <= " << N << "   ";
 		cin >> n;
 		if (n > 0 && n <= N) break;
 		cout << " Error ";
