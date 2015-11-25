@@ -1,0 +1,24 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main()
+
+{
+	int f1 = 0, f2 = 1, fib = 1;
+	for (;;)
+	{
+		fib = f1 + f2;
+		if (fib >= 100)
+		{
+			cout << "The smallest theree-number Fibonacci =" << fib;
+			break;
+		}
+		f1 = f2;
+		f2 = fib;
+	}
+	_getch();
+	return 0;
+}
+
