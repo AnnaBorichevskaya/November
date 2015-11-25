@@ -1,0 +1,30 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main()
+{
+	long long int n, q, t, m, result;
+	cout << "Input number n=";
+	cin >> n;
+	cout << "Enter grade rounding q=";
+	cin >> q;
+	if (q != 0)
+	{
+		m = n / q;
+		t = (n%q) / (q / 10);
+		if (t >= 5)
+			result = (m + 1)*q;
+		else
+			result = m*q;
+		cout << "Round number" << result;
+	}
+	else{
+		result = n;
+		cout << "Round number" << result;
+	}
+	_getch();
+	return 0;
+}
+
