@@ -26,7 +26,7 @@ int main()
 	{
 		if (a[i] < a[min])
 			min = i;
-		else if (a[i] > a[min]) 
+		else if (a[i] >= a[min]) 
 			max = i;
 	}
 	cout << endl;
