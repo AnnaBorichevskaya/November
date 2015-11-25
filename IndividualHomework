@@ -1,0 +1,101 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool IsDataValid(double epsilon, int first_number, int last_number, int step);
+
+double cosinus(double x, double epsilon, int &additions);
+
+void Function1(double epsilon, double first_number, double last_number, double step);
+
+int main()
+{
+	long int step, first_number, last_number;
+	double epsilon;
+	while (true)
+	{
+		while (true)
+		{
+			cout << "Enter your first number: ";
+			cin >> first_number;
+			cout << "Enter your last number: ";
+			cin >> last_number;
+			cout << "Enter epsilon: ";
+			cin >> epsilon;
+			cout << "Enter step: ";
+			cin >> step;
+			if (IsDataValid(epsilon, first_number, last_number, step)) break;
+			cout << "Invalid Data" << endl;
+			system("pause");
+			system("cls");
+		}
+		Function1(epsilon, first_number, last_number, step);
+		system("pause");
+		system("cls");
+
+		char n;
+		cout << "Would you like to countinie? " << endl;
+		cout << "If Yes, press - a or A " << endl;
+		cout << "If No, press - other symbols" << endl;
+		cout << "Waiting for Enter: " << endl;
+		cin >> n;
+		if (n == 'a' || n == 'A') continue;
+		break;
+		system("pause");
+		system("cls");
+	}
+	return 0;
+}
+
+bool IsDataValid(double epsilon, int first_number, int last_number, int step)
+{
+	if (epsilon < 0 || epsilon >= 1) return false;
+	if (last_number <= first_number) return false;
+	if (step <= 0) return false;
+	return true;
+}
+
+double cosinus(double x, double epsilon, int &additions)
+{
+	int m;
+	m = 1;
+	double Sum = 1, yNext = (-1) * x*x / 2;
+	while (fabs(yNext) >= epsilon)
+	{
+		Sum += yNext;
+		yNext *= (-1) * x *x / ((2 * m + 1)*(2 * m + 2));
+		m++;
+	}
+	additions = m;
+	return Sum;
+}
+
+void Function1(double epsilon, double first_number, double last_number, double step)
+{
+	cout.width(5);
+	cout << "  x  ";
+	cout.width(15);
+	cout << " cosinus (me)";
+	cout.width(15);
+	cout << " cosinus (cmat.h)";
+	cout.width(15);
+	cout << " Difference";
+	cout.width(15);
+	cout << " additions";
+	double x;
+	for (x = first_number; x <= last_number; x += step)
+	{
+		int additions = 0;
+		cout << endl;
+		cout.width(5);
+		cout << x;
+		cout.width(15);
+		cout << cosinus(x, epsilon, additions);
+		cout.width(15);
+		cout << cos(x);
+		cout.width(15);
+		cout << fabs(cosinus(x, epsilon, additions) - cos(x));
+		cout.width(15);
+		cout << additions;
+	}
+}
