@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	double a, b, c, p, S;
+	cout << " Enter lengths of parties of triangle " << endl;
+	cout << " Enter the first lengths: " << endl;
+	cin >> a;
+	if (a <= 0)
+		cout << " Error! ";
+	cout << " Enter the second lengths: " << endl;
+	cin >> b;
+	if (b <= 0)
+		cout << " Error! ";
+	cout << " Enter the third lengths: " << endl;
+	cin >> c;
+	if (c <= 0)
+		cout << " Error! ";
+	p = (a + b + c) / 2;
+	S = sqrt(p * (p - a)*(p - b)*(p - c));
+	cout << " Area is: " << S << endl;
+	system("pause");
+	return 0;
+}
