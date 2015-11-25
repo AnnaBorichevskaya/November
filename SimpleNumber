@@ -1,0 +1,22 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main()
+{
+	int t;
+	cout << "Input number t=";
+	cin >> t;
+	bool b = false;
+	for (int i = 2; i < t; ++i)
+	{
+		if (t % i == 0)
+			b = true;
+		    break;
+	}
+	if (b)	printf("It is not simple number. \n");
+	else 	printf("It is  simple number. \n");
+	_getch();
+	return 0;
+}
