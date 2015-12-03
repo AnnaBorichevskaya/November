@@ -1,0 +1,66 @@
+#include <iostream>
+using namespace std;
+int EnterDemention(int n);
+int IsSameNumber(int a[], int n);
+void Display(int a[], int n);
+void EnterArray(int a[], int n);
+
+int main()
+{
+	const int N = 20;
+	int a[N] = { 0 };
+	int n = EnterDemention(N);
+
+	EnterArray(a, n);
+	system("cls");
+
+	cout << "Sourse array : ";
+	Display(a, n);
+	cout << "Are " << IsSameNumber(a , n) << " same numbers in this array. ";
+	system("pause");
+	return 0;
+}
+
+
+void EnterArray(int a[], int n)
+{
+	cout << "Enter array elements: " << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << "[" << (i + 1) << "] = ";
+		cin >> a[i];
+	}
+}
+
+void Display(int a[], int n)
+{
+	for (int i = 0; i < n; i++)
+		cout << a[i] << ", ";
+}
+
+int EnterDemention(int n)
+{
+	int d;
+	while (true)
+	{
+		cout << "Enter n ( amount ) <= " << n << "   ";
+		cin >> d;
+		if (d > 0 && d <= n) return d;
+		cout << "Error!";
+	}
+}
+
+int IsSameNumber(int a[], int n)
+{
+	int SameNumbers = 0;
+	for (int i = 0; i <= n - 1; i++)
+	{
+		int j = 0;
+		for (; j < i; j++)
+		{
+			if (a[i] == a[j]) break;
+		}
+		if (i == j) SameNumbers++;
+	}
+	return SameNumbers;
+}
